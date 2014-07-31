@@ -80,8 +80,8 @@ Knex.initialize = function(config) {
 
   // Runs a new transaction, taking a container and returning a promise
   // for when the transaction is resolved.
-  knex.transaction = function(container) {
-    return new client.Transaction(container);
+  knex.transaction = function(container, transactionIsolationLevel) {
+    return new client.Transaction(container, transactionIsolationLevel);
   };
 
   // Convenience method for tearing down the pool.
